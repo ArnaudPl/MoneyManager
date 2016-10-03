@@ -1,3 +1,18 @@
 @import "materialize/components/color";
-$primary-color: color("green", "darken-2") !default;
+$primary-color: color("amber", "lighten-1") !default;
 @import 'materialize';
+
+.brand-logo {
+  margin-left: 10px;
+}
+
+//Footer toujours au min en bas de l'écran --> Poussé si bcp de contenu
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}

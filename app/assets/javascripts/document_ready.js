@@ -1,3 +1,4 @@
 $(document).ready(function() {
-  window.materializeForm.init()
+  window.materializeForm.init();
+  $(".button-collapse").sideNav();
 });
