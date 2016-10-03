@@ -22,3 +22,23 @@ main {
 h2, h3, h4, h5, h6 {
   text-align: center;
 }
+
+.alert {
+  padding: 10px;
+  margin: 0;
+  margin-top: 10px;
+}
+
+.alert-success {
+  background-color: green;
+  color: white;
+}
+
+.alert-error {
+  background-color: red;
+  color: white;
+}
+
+.alert-warning {
+  background-color: yellow;
+}

@@ -1,0 +1,11 @@
+<% flash.each do |key, value| %>
+  <div class="row">
+    <div class="col s12 m6 offset-m3">
+      <div class="card-panel hoverable center alert alert-<%= key %>">
+        <span>
+          <%= value %>
+        </span>
+      </div>
+    </div>
+  </div>
+<% end %>

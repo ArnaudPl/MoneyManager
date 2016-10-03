@@ -13,6 +13,12 @@
     <%= render 'layouts/navbar' %>
     <main>
       <div class="container">
+        <%= render 'layouts/flashes' %>
+        <% if current_user %>
+          Signed in as <%= current_user.username %> | <%= link_to "Logout", '/logout' %>
+        <% else %>
+          <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+        <% end %>
         <%= yield %>
       </div>
     </main>
