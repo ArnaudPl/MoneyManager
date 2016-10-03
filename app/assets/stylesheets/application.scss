@@ -1,5 +1,7 @@
 @import "materialize/components/color";
-$primary-color: color("amber", "lighten-1") !default;
+$primary-color: color("green", "base") !default;
+$secondary-color: color("amber", "base") !default;
+$link-color: color("cyan", "base") !default;
 @import 'materialize';
 
 .brand-logo {
