@@ -1,0 +1,16 @@
+<h1>Signup!</h1>
+
+<%= simple_form_for @user do |f| %>
+
+  <div class="row">
+    <%= f.input :firstname, wrapper_html: {class: 's12 m6'} %>
+    <%= f.input :name, wrapper_html: {class: 's12 m6'} %>
+    <%= f.input :username, wrapper_html: {class: 's12 m6 offset-m3'} %>
+    <%= f.input :password_digest, wrapper_html: {class: 's12 m6 offset-m3'} %>
+  </div>
+
+  <div class="row center">
+    <%= f.button :submit %>
+  </div>
+
+<% end %>

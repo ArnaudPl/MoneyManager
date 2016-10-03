@@ -1,6 +1,6 @@
 @import "materialize/components/color";
-$primary-color: color("green", "base") !default;
-$secondary-color: color("amber", "base") !default;
+$primary-color: color("blue", "base") !default;
+$secondary-color: color("pink", "base") !default;
 $link-color: color("cyan", "base") !default;
 @import 'materialize';
 
@@ -17,4 +17,8 @@ body {
 
 main {
   flex: 1 0 auto;
+}
+
+h2, h3, h4, h5, h6 {
+  text-align: center;
 }
