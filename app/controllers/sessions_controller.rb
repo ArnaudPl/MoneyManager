@@ -11,20 +11,20 @@ class SessionsController < ApplicationController
       # Save the user id inside the browser cookie. This is how we keep the user
       # logged in when they navigate around our website.
       session[:user_id] = user.id
-      flash[:success] = "You have been successfully connected !"
+      flash[:success] = I18n.t '.success-login'
       redirect_to '/'
     else
       # If user's login doesn't work, send them back to the login form.
-      flash[:error] = "Please verify your informations."
-      redirect_to '/login'
+      flash[:error] = I18n.t '.error-login'
+      redirect_to login_path
     end
   end
 
   #Logout
   def destroy
     session[:user_id] = nil
-    flash[:success] = "You have been disconnected."
-    redirect_to '/login'
+    flash[:success] = I18n.t '.success-disconnect'
+    redirect_to login_path
   end
 
 end

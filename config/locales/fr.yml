@@ -1,0 +1,27 @@
+fr:
+  welcome:
+    index:
+      title: 'Salut et bienvenue !'
+  success-login: 'Tu es maintenant connecté !'
+  error-login: 'Veuillez vérifier vos informations.'
+  success-disconnect: 'Vous avez été déconnecté.'
+  success-signup: 'Votre compte a été correctement créé !'
+  error-signup: 'Veuillez vérifier vos informations.'
+  layouts:
+    footer:
+      copyright: '© 2016 Arnaud Plumez'
+      link-homepage: "Retourner à l'accueil"
+    navbar:
+      login: 'Se connecter'
+    application:
+      signed_in_as: 'Connecté en tant que'
+      login: 'Se connecter'
+      signup: "S'inscrire"
+      logout: 'Se déconnecter'
+  sessions:
+    new:
+      title: "Connectez-vous !"
+      logging-in: 'Connexion'
+      login: 'Se connecter'
+      username: "Nom d'utilisateur"
+      password: 'Mot de passe'

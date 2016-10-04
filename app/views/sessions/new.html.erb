@@ -1,6 +1,6 @@
-<h2>Login</h2>
+<h2><%= t('.title') %></h2>
 
-<%= simple_form_for :user, url: '/login' do |f| %>
+<%= simple_form_for :user, url: login_path do |f| %>
 
   <div class="row">
     <%= f.input :username, wrapper_html: {class: 's12 m6 offset-m3'} %>
@@ -8,7 +8,7 @@
   </div>
 
   <div class="row center">
-    <%= f.button :submit, value: 'Login', data: { disable_with: "Logging in..." } %>
+    <%= f.button :submit, value: t('.login'), data: { disable_with: t('.logging-in')+"..." } %>
   </div>
 
 <% end %>

@@ -16,9 +16,9 @@
         <%= render 'layouts/flashes' %>
         <div class="row">
           <% if current_user %>
-            <p>Signed in as <%= current_user.username %> | <%= link_to "Logout", '/logout' %></p>
+            <p><%= t('.signed_in_as') %> <%= current_user.username %> | <%= link_to t(".logout"), '/logout' %></p>
           <% else %>
-            <p><%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %></p>
+            <p><%= link_to t(".login"), '/login' %> | <%= link_to t(".signup"), '/signup' %></p>
           <% end %>
         </div>
         <%= yield %>

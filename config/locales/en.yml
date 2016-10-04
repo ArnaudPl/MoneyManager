@@ -20,4 +20,29 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  welcome:
+    index:
+      title: 'Hi and welcome!'
+  success-login: 'You have been successfully connected!'
+  error-login: 'Please verify your informations.'
+  success-disconnect: 'You have been disconnected.'
+  success-signup: 'You have successfully created your account!'
+  error-signup: 'Please verify your informations.'
+  layouts:
+    footer:
+      copyright: '© 2016 Arnaud Plumez'
+      link-homepage: 'Back to the homepage'
+    navbar:
+      login: 'Login'
+    application:
+      signed_in_as: 'Signed in as'
+      login: 'Login'
+      signup: 'Signup'
+      logout: 'Logout'
+  sessions:
+    new:
+      title: "Let's get logged in!"
+      logging-in: 'Logging in'
+      login: 'Login'
+      username: 'Username'
+      password: 'Password'

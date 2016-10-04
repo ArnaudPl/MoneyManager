@@ -10,11 +10,11 @@ class UsersController < ApplicationController
     user.inscription_date = Time.zone.now
     if user.save
       session[:user_id] = user.id
-      flash[:success] = "You have successfully created your account !"
-      redirect_to '/'
+      flash[:success] = I18n.t '.success-signup'
+      redirect_to root_path
     else
-      flash[:error] = "Please verify your informations."
-      redirect_to '/signup'
+      flash[:error] = I18n.t '.error-signup'
+      redirect_to signup_path
     end
   end
 
