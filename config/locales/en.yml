@@ -32,12 +32,13 @@ en:
   password: 'Password'
   firstname: 'Firstname'
   name: 'Name'
+  login: 'Login'
+  logout: 'Logout'
+  homepage: 'Home'
   layouts:
     footer:
       copyright: '© 2016 Arnaud Plumez'
       link-homepage: 'Back to the homepage'
-    navbar:
-      login: 'Login'
     application:
       signed_in_as: 'Signed in as'
       login: 'Login'
