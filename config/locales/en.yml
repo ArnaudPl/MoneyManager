@@ -28,6 +28,10 @@ en:
   success-disconnect: 'You have been disconnected.'
   success-signup: 'You have successfully created your account!'
   error-signup: 'Please verify your informations.'
+  username: 'Username'
+  password: 'Password'
+  firstname: 'Firstname'
+  name: 'Name'
   layouts:
     footer:
       copyright: '© 2016 Arnaud Plumez'
@@ -46,3 +50,8 @@ en:
       login: 'Login'
       username: 'Username'
       password: 'Password'
+  users:
+    new:
+      title: "Rejoin us!"
+      signup: "Sign up"
+      signing-up: "Signing up"

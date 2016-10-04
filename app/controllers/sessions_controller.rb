@@ -1,6 +1,8 @@
 class SessionsController < ApplicationController
 
   def new
+    @usernameLabel = I18n.t '.username'
+    @passwordLabel = I18n.t '.password'
   end
 
   #Login
@@ -12,7 +14,7 @@ class SessionsController < ApplicationController
       # logged in when they navigate around our website.
       session[:user_id] = user.id
       flash[:success] = I18n.t '.success-login'
-      redirect_to '/'
+      redirect_to root_path
     else
       # If user's login doesn't work, send them back to the login form.
       flash[:error] = I18n.t '.error-login'

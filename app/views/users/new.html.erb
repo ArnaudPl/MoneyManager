@@ -1,16 +1,16 @@
-<h2>Signup!</h2>
+<h2><%= t('.title') %></h2>
 
 <%= simple_form_for @user do |f| %>
 
   <div class="row">
-    <%= f.input :firstname, wrapper_html: {class: 's12 m4 offset-m2'} %>
-    <%= f.input :name, wrapper_html: {class: 's12 m4'} %>
-    <%= f.input :username, wrapper_html: {class: 's12 m6 offset-m3'} %>
-    <%= f.input :password_digest, label: 'Password', wrapper_html: {class: 's12 m6 offset-m3'} %>
+    <%= f.input :firstname, label: @firstnameLabel, wrapper_html: {class: 's12 m4 offset-m2'} %>
+    <%= f.input :name, label: @nameLabel, wrapper_html: {class: 's12 m4'} %>
+    <%= f.input :username, label: @usernameLabel, wrapper_html: {class: 's12 m6 offset-m3'} %>
+    <%= f.input :password_digest, label: @passwordLabel, wrapper_html: {class: 's12 m6 offset-m3'} %>
   </div>
 
   <div class="row center">
-    <%= f.button :submit %>
+    <%= f.button :submit, value: t('.signup'), data: { disable_with: t('.Signing-up')+"..." } %>
   </div>
 
 <% end %>

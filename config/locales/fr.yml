@@ -7,6 +7,10 @@ fr:
   success-disconnect: 'Vous avez été déconnecté.'
   success-signup: 'Votre compte a été correctement créé !'
   error-signup: 'Veuillez vérifier vos informations.'
+  username: "Nom d'utilisateur"
+  password: 'Mot de passe'
+  firstname: 'Prénom'
+  name: 'Nom'
   layouts:
     footer:
       copyright: '© 2016 Arnaud Plumez'
@@ -25,3 +29,8 @@ fr:
       login: 'Se connecter'
       username: "Nom d'utilisateur"
       password: 'Mot de passe'
+  users:
+    new:
+      title: "Rejoins-nous!"
+      signup: "S'inscrire"
+      signing-up: "Inscription"

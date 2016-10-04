@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   def new
     @user = User.new
+    @firstnameLabel = I18n.t '.firstname'
+    @nameLabel = I18n.t '.name'
+    @usernameLabel = I18n.t '.username'
+    @passwordLabel = I18n.t '.password'
   end
 
   def create
