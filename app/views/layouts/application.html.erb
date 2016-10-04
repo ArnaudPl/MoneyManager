@@ -14,11 +14,13 @@
     <main>
       <div class="container">
         <%= render 'layouts/flashes' %>
-        <% if current_user %>
-          Signed in as <%= current_user.username %> | <%= link_to "Logout", '/logout' %>
-        <% else %>
-          <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
-        <% end %>
+        <div class="row">
+          <% if current_user %>
+            <p>Signed in as <%= current_user.username %> | <%= link_to "Logout", '/logout' %></p>
+          <% else %>
+            <p><%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %></p>
+          <% end %>
+        </div>
         <%= yield %>
       </div>
     </main>

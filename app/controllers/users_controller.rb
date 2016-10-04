@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def create
     user = User.new(user_params)
+    # Hash the user password into the db
     user.password_digest = BCrypt::Password.create(params[:user][:password_digest])
     user.inscription_date = Time.zone.now
     if user.save
