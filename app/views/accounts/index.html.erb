@@ -7,7 +7,7 @@
     <div class="card">
       <div class="card-content">
         <span class="card-title"><%= account.name %></span>
-        <p>Solde du compte</p>
+        <p><strong><%= t('.balance') %> : </strong> CHF <%= calculateAccountCurrentBalance(account.id) %></p>
       </div>
       <div class="card-action">
         <a href="#" class="waves-effect waves-light btn account-add tooltipped" data-tooltip="<%= @addTooltip %>" ><i class="material-icons">add</i></a>

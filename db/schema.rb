@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161003141229) do
+ActiveRecord::Schema.define(version: 20161005165651) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20161003141229) do
   end
 
   create_table "transactions", force: :cascade do |t|
-    t.boolean  "type"
+    t.boolean  "withdraw"
     t.float    "amount"
     t.string   "label"
     t.integer  "user_id"

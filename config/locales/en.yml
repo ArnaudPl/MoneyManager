@@ -64,3 +64,4 @@ en:
   accounts:
     index:
       title: "Manage your accounts"
+      balance: "Balance"

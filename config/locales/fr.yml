@@ -43,3 +43,4 @@ fr:
   accounts:
     index:
       title: "Gestion de vos comptes"
+      balance: "Solde"

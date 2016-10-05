@@ -5,4 +5,5 @@ $(document).ready(function() {
   $('.alert').click(function(event) {
     $(this).hide(500);
   });
+  $('.tooltipped').tooltip({delay: 50});
 });
