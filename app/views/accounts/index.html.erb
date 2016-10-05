@@ -3,16 +3,17 @@
 <div class="row">
   <!-- Display all the accounts created -->
   <% @accounts.each do |account| %>
-  <div class="col s12 m6 l3">
+  <div class="col s12 m6 l4">
     <div class="card">
       <div class="card-content">
         <span class="card-title"><%= account.name %></span>
+        <a href="#" class="waves-effect waves-light btn-flat right account-edit tooltipped black-text" data-tooltip="<%= @editTooltip %>"><i class="material-icons">edit</i></a>
         <p><strong><%= t('.balance') %> : </strong> CHF <%= calculateAccountCurrentBalance(account.id) %></p>
       </div>
       <div class="card-action">
-        <a href="#" class="waves-effect waves-light btn account-add tooltipped" data-tooltip="<%= @addTooltip %>" ><i class="material-icons">add</i></a>
+        <a href="#" class="waves-effect waves-light btn account-add tooltipped light-green" data-tooltip="<%= @addTooltip %>" ><i class="material-icons">add</i></a>
         <a href="#" class="waves-effect waves-light btn account-remove tooltipped" data-tooltip="<%= @removeTooltip %>"><i class="material-icons">remove</i></a>
-        <a href="#" class="waves-effect waves-light btn right account-edit tooltipped" data-tooltip="<%= @editTooltip %>"><i class="material-icons">edit</i></a>
+        <a href="#" class="waves-effect btn-flat black-text right" style="margin-right: 0;"><%= t('.show') %></a>
       </div>
     </div>
   </div>
