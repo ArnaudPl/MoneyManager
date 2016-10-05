@@ -2,6 +2,7 @@ fr:
   welcome:
     index:
       title: 'Salut et bienvenue !'
+  must-login: 'Vous devez être connecté pour acceder à cette partie.'
   success-login: 'Tu es maintenant connecté !'
   error-login: 'Veuillez vérifier vos informations.'
   success-disconnect: 'Vous avez été déconnecté.'
@@ -14,6 +15,10 @@ fr:
   login: 'Se connecter'
   logout: 'Se déconnecter'
   homepage: 'Accueil'
+  accounts-menu: 'Comptes'
+  tooltip-add: "Créditer"
+  tooltip-remove: "Débiter"
+  tooltip-edit: "Modifier le compte"
   layouts:
     footer:
       copyright: '© 2016 Arnaud Plumez'
@@ -35,3 +40,6 @@ fr:
       title: "Rejoins-nous!"
       signup: "S'inscrire"
       signing-up: "Inscription"
+  accounts:
+    index:
+      title: "Gestion de vos comptes"

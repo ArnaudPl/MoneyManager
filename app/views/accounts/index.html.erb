@@ -1,0 +1,20 @@
+<h2><%= t('.title') %></h2>
+
+<div class="row">
+  <!-- Display all the accounts created -->
+  <% @accounts.each do |account| %>
+  <div class="col s12 m6 l3">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title"><%= account.name %></span>
+        <p>Solde du compte</p>
+      </div>
+      <div class="card-action">
+        <a href="#" class="waves-effect waves-light btn account-add tooltipped" data-tooltip="<%= @addTooltip %>" ><i class="material-icons">add</i></a>
+        <a href="#" class="waves-effect waves-light btn account-remove tooltipped" data-tooltip="<%= @removeTooltip %>"><i class="material-icons">remove</i></a>
+        <a href="#" class="waves-effect waves-light btn right account-edit tooltipped" data-tooltip="<%= @editTooltip %>"><i class="material-icons">edit</i></a>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>

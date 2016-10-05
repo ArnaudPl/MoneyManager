@@ -23,6 +23,7 @@ en:
   welcome:
     index:
       title: 'Hi and welcome!'
+  must-login: 'You must log in before continuing.'
   success-login: 'You have been successfully connected!'
   error-login: 'Please verify your informations.'
   success-disconnect: 'You have been disconnected.'
@@ -35,6 +36,10 @@ en:
   login: 'Login'
   logout: 'Logout'
   homepage: 'Home'
+  accounts-menu: 'Accounts'
+  tooltip-add: "Deposit"
+  tooltip-remove: "Withdraw"
+  tooltip-edit: "Edit account"
   layouts:
     footer:
       copyright: '© 2016 Arnaud Plumez'
@@ -56,3 +61,6 @@ en:
       title: "Rejoin us!"
       signup: "Sign up"
       signing-up: "Signing up"
+  accounts:
+    index:
+      title: "Manage your accounts"

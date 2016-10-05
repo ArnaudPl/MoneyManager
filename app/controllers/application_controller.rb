@@ -12,11 +12,16 @@ class ApplicationController < ActionController::Base
   end
 
   def menus
-    @menus = '<li><a href="' + root_path + '">' + I18n.t('.homepage') + '</a></li>'
+    homepage = I18n.t('.homepage')
+    logout = I18n.t('.logout')
+    accounts = I18n.t('.accounts-menu')
+    login = I18n.t('.login')
+    @menus = '<li><a href="' + root_path + '">' + homepage + '</a></li>'
     if current_user
-      @menus += '<li><a href="' + logout_path + '">' + I18n.t('.logout') + '</a></li>'
+      @menus += '<li><a href="' + accounts_path + '">' + accounts + '</a></li>'
+      @menus += '<li><a href="' + logout_path + '">' + logout + '</a></li>'
     else
-      @menus += '<li><a href="' + login_path + '">' + I18n.t('.login') + '</a></li>'
+      @menus += '<li><a href="' + login_path + '">' + login + '</a></li>'
     end
   end
   helper_method :menus
@@ -27,6 +32,9 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def authorize
-    redirect_to login_path unless current_user
+    if !current_user
+      flash[:error] = I18n.t('must-login')
+      redirect_to login_path
+    end
   end
 end
