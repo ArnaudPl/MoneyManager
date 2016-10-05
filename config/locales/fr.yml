@@ -19,6 +19,10 @@ fr:
   tooltip-add: "Créditer"
   tooltip-remove: "Débiter"
   tooltip-edit: "Modifier le compte"
+  no-transactions: "Il n'y a pas de transactions pour le moment."
+  amount: "Montant"
+  label: "Libellé"
+  date: "Date"
   layouts:
     footer:
       copyright: '© 2016 Arnaud Plumez'
@@ -45,3 +49,7 @@ fr:
       title: "Gestion de vos comptes"
       balance: "Solde"
       show: "Afficher"
+    show:
+      title-part-one: "Compte"
+      balance: "Solde"
+      latest-transactions: "Dernières transactions"

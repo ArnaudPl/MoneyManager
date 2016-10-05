@@ -40,6 +40,10 @@ en:
   tooltip-add: "Deposit"
   tooltip-remove: "Withdraw"
   tooltip-edit: "Edit account"
+  no-transactions: "There are currently no transactions."
+  amount: "Amount"
+  label: "Label"
+  date: "Date"
   layouts:
     footer:
       copyright: '© 2016 Arnaud Plumez'
@@ -66,3 +70,7 @@ en:
       title: "Manage your accounts"
       balance: "Balance"
       show: "Show"
+    show:
+      title-part-one: "Account"
+      balance: "Balance"
+      latest-transactions: "Latest transactions"

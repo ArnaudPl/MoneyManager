@@ -13,7 +13,7 @@
       <div class="card-action">
         <a href="#" class="waves-effect waves-light btn account-add tooltipped light-green" data-tooltip="<%= @addTooltip %>" ><i class="material-icons">add</i></a>
         <a href="#" class="waves-effect waves-light btn account-remove tooltipped" data-tooltip="<%= @removeTooltip %>"><i class="material-icons">remove</i></a>
-        <a href="#" class="waves-effect btn-flat black-text right" style="margin-right: 0;"><%= t('.show') %></a>
+        <a href="<%= account_url(account) %>" class="waves-effect btn-flat black-text right" style="margin-right: 0;"><%= t('.show') %></a>
       </div>
     </div>
   </div>
