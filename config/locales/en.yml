@@ -20,6 +20,16 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  time:
+    formats:
+      date_day_month: '%d-%m'
+  activerecord:
+    errors:
+      models:
+        account:
+          attributes:
+            name:
+              taken: "Name already taken by another account."
   welcome:
     index:
       title: 'Hi and welcome!'
@@ -29,6 +39,8 @@ en:
   success-disconnect: 'You have been disconnected.'
   success-signup: 'You have successfully created your account!'
   error-signup: 'Please verify your informations.'
+  success-account-update: "The account has been successfully updated."
+  error-account-update: "We couldn't update the account. Please retry."
   username: 'Username'
   password: 'Password'
   firstname: 'Firstname'
@@ -44,6 +56,7 @@ en:
   amount: "Amount"
   label: "Label"
   date: "Date"
+  nameAccount: "Account name"
   layouts:
     footer:
       copyright: '© 2016 Arnaud Plumez'
@@ -74,3 +87,7 @@ en:
       title-part-one: "Account"
       balance: "Balance"
       latest-transactions: "Latest transactions"
+    edit:
+      title-part-one: "Edit account"
+      update: "Update"
+      updating: "Updating"

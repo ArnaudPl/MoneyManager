@@ -3,7 +3,7 @@
 <%= simple_form_for :user, url: login_path do |f| %>
 
   <div class="row">
-    <%= f.input :username, label: @usernameLabel, wrapper_html: {class: 's12 m6 offset-m3'} %>
+    <%= f.input :username, :autofocus => true, label: @usernameLabel, wrapper_html: {class: 's12 m6 offset-m3'} %>
     <%= f.input :password, label: @passwordLabel, wrapper_html: {class: 's12 m6 offset-m3'} %>
   </div>
 

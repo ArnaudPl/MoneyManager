@@ -14,6 +14,23 @@ class AccountsController < ApplicationController
     @balance = calculateAccountCurrentBalance(@account.id)
   end
 
+  def edit
+    @account = Account.find(params[:id])
+    @nameLabel = I18n.t('.nameAccount')
+  end
+
+  def update
+    @account = Account.find(params[:id])
+    if @account.update(account_params)
+      flash[:success] = I18n.t('.success-account-update')
+      redirect_to accounts_path
+    else
+      @account.name = Account.find(params[:id]).name #Put back the name of the account before trying the update
+      flash[:error] = I18n.t('.error-account-update')
+      render 'edit'
+    end
+  end
+
   def calculateAccountCurrentBalance(account_id)
       withdraws = Transaction.all.where(withdraw: true).where(account_id: account_id).sum(:amount)
       deposits = Transaction.all.where(withdraw: false).where(account_id: account_id).sum(:amount)
@@ -31,17 +48,23 @@ class AccountsController < ApplicationController
     transactions = Transaction.all.where(account_id: account_id).order(:created_at)
     transactions.each do |transaction|
       if transaction.withdraw
-        html += '<li class="collection-item green row white-text"><span class="col s1 center">+</span><span class="col s5 truncate">' + transaction.label + '</span><span class="col s3">' + transaction.amount.to_s + 'CHF</span><span class="col s2">' + transaction.created_at.strftime("%e %b") + '</span></li>'
+        html += '<li class="collection-item green row white-text"><span class="col s1 center">+</span><span class="col s5 truncate">' + transaction.label + '</span><span class="col s3">' + transaction.amount.to_s + 'CHF</span><span class="col s2">' + l(transaction.created_at, format: :date_day_month) + '</span></li>'
       else
         html += '<li class="collection-item red row white-text"><span class="col s1 center">-</span><span class="col s5 truncate">' + transaction.label + '</span><span class="col s3">' + transaction.amount.to_s + 'CHF</span><span class="col s2">' + transaction.created_at.strftime("%e %b") + '</span></li>'
       end
     end
     if html == ""
       html = '<li class="collection-item center grey lighten-3">' + I18n.t('.no-transactions') + '</li>'
+      #Add next line when the application is able to add transactions to an account.
+      #html += '<li class="collection-item center grey lighten-3">' + I18n.t('.add-transaction') + '</li>'
     else
       html = '<li class="collection-item grey lighten-2 row"><span class="col s1">+/-</span><span class="col s5 truncate">' + I18n.t('.label') + '</span><span class="col s3">' + I18n.t('.amount') + '</span><span class="col s2">' + I18n.t('.date') + '</span></li>' + html
     end
     html
   end
   helper_method :printAccountLatestTransactions
+
+  def account_params
+    params.require(:account).permit(:name)
+  end
 end

@@ -1,4 +1,14 @@
 fr:
+  time:
+    formats:
+      date_day_month: '%e.%m'
+  activerecord:
+    errors:
+      models:
+        account:
+          attributes:
+            name:
+              taken: "Nom déjà utilisé pour un autre compte."
   welcome:
     index:
       title: 'Salut et bienvenue !'
@@ -8,6 +18,8 @@ fr:
   success-disconnect: 'Vous avez été déconnecté.'
   success-signup: 'Votre compte a été correctement créé !'
   error-signup: 'Veuillez vérifier vos informations.'
+  success-account-update: "Le compte a été correctement mis à jour."
+  error-account-update: "Nous n'avons pas pu mettre le compte à jour, veuillez réessayer."
   username: "Nom d'utilisateur"
   password: 'Mot de passe'
   firstname: 'Prénom'
@@ -23,6 +35,7 @@ fr:
   amount: "Montant"
   label: "Libellé"
   date: "Date"
+  nameAccount: "Nom du compte"
   layouts:
     footer:
       copyright: '© 2016 Arnaud Plumez'
@@ -53,3 +66,7 @@ fr:
       title-part-one: "Compte"
       balance: "Solde"
       latest-transactions: "Dernières transactions"
+    edit:
+      title-part-one: "Modifier le compte"
+      update: "Mettre à jour"
+      updating: "Mise à jour"

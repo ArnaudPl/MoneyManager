@@ -7,7 +7,7 @@
     <div class="card">
       <div class="card-content">
         <span class="card-title"><%= account.name %></span>
-        <a href="#" class="waves-effect waves-light btn-flat right account-edit tooltipped black-text" data-tooltip="<%= @editTooltip %>"><i class="material-icons">edit</i></a>
+        <a href="<%= edit_account_url(account) %>" class="waves-effect waves-light btn-flat right account-edit tooltipped black-text" data-tooltip="<%= @editTooltip %>"><i class="material-icons">edit</i></a>
         <p><strong><%= t('.balance') %> : </strong> CHF <%= calculateAccountCurrentBalance(account.id) %></p>
       </div>
       <div class="card-action">
