@@ -8,11 +8,11 @@
       <div class="card-content">
         <span class="card-title"><%= account.name %></span>
         <a href="<%= edit_account_url(account) %>" class="waves-effect waves-light btn-flat right account-edit tooltipped black-text" data-tooltip="<%= @editTooltip %>"><i class="material-icons">edit</i></a>
-        <p><strong><%= t('.balance') %> : </strong> CHF <%= calculateAccountCurrentBalance(account.id) %></p>
+        <p><strong><%= t('.balance') %> : </strong> <%= calculateAccountCurrentBalance(account.id) %></p>
       </div>
       <div class="card-action">
-        <a href="#" class="waves-effect waves-light btn account-add tooltipped light-green" data-tooltip="<%= @addTooltip %>" ><i class="material-icons">add</i></a>
-        <a href="#" class="waves-effect waves-light btn account-remove tooltipped" data-tooltip="<%= @removeTooltip %>"><i class="material-icons">remove</i></a>
+        <a href="<%= new_account_transaction_path(account) %>?isWithdraw=false" class="waves-effect waves-light btn account-add tooltipped light-green" data-tooltip="<%= @addTooltip %>" ><i class="material-icons">add</i></a>
+        <a href="<%= new_account_transaction_path(account) %>?isWithdraw=true" class="waves-effect waves-light btn account-remove tooltipped" data-tooltip="<%= @removeTooltip %>"><i class="material-icons">remove</i></a>
         <a href="<%= account_url(account) %>" class="waves-effect btn-flat black-text right" style="margin-right: 0;"><%= t('.show') %></a>
       </div>
     </div>

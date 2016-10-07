@@ -1,0 +1,54 @@
+<h2><%= @account.name %> -
+<% if params[:isWithdraw] == "true" %>
+  <span class='red-text'><%= t('.withdraw') %></span>
+<% else %>
+  <span class='green-text'><%= t('.deposit') %></span>
+<% end %>
+</h2>
+
+<% if @transactionSave && @transactionSave.errors.any? %>
+    <div id="error_explanation">
+
+      <h2><%= pluralize(@transactionSave.errors.count, "error") %> prohibited this msg from being saved:</h2>
+
+      <ul>
+        <% @transactionSave.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
+
+<%= simple_form_for([@account, @account.transactions.build]) do |f| %>
+
+  <div class="row">
+    <h4 class="center"><em><%= t('.balance') %>: <%= @balance %></em></h4>
+  </div>
+
+  <% if params[:isWithdraw] != "true"
+        max_amount = 999999
+     else
+        max_amount = @balance
+     end %> <!-- Change the max value of the amount input. -->
+
+  <div class="row hide">
+    <%= f.input :account_id, :as => :hidden, :input_html => { :value => @account.id } %>
+    <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id } %>
+    <%= f.input :withdraw, :as => :hidden, :input_html => { :value => params[:isWithdraw] } %>
+  </div>
+
+  <div class="row">
+    <%= f.input :label, label: @Label, :autofocus => true, wrapper_html: {class: 's12 m6 offset-m3'} %>
+    <%= f.input :amount, label: @AmountLabel, input_html: { min: '0', max: max_amount.to_s }, wrapper_html: {class: 's12 m4 offset-m4'} %>
+  </div>
+
+  <div class="row center">
+    <%= f.button :submit, value: t('.add'), data: { disable_with: t('.adding')+"..." } %>
+    <% if request.referer != nil %>
+      <a href="<%= request.referer %>" class="btn grey"><%= t('.cancel') %></a>
+    <% else %>
+      <a href="<%= accounts_path %>" class="btn grey"><%= t('.cancel') %></a>
+    <% end %>
+  </div>
+
+<% end %>

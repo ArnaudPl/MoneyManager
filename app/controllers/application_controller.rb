@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include ActionView::Helpers::NumberHelper
   protect_from_forgery with: :exception
 
   before_action :set_locale
@@ -30,6 +31,18 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
   helper_method :current_user
+
+  def calculateAccountCurrentBalance(account_id)
+      withdraws = Transaction.all.where(withdraw: true).where(account_id: account_id).sum(:amount)
+      deposits = Transaction.all.where(withdraw: false).where(account_id: account_id).sum(:amount)
+      balance = deposits - withdraws
+      if balance == 0
+        number_to_currency(0)
+      else
+        number_to_currency(balance)
+      end
+  end
+  helper_method :calculateAccountCurrentBalance
 
   def authorize
     if !current_user

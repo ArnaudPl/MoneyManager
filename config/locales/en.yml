@@ -30,6 +30,10 @@ en:
           attributes:
             name:
               taken: "Name already taken by another account."
+        transaction:
+          attributes:
+            withdraw:
+              blank: "Cannot be blank."
   welcome:
     index:
       title: 'Hi and welcome!'
@@ -41,6 +45,12 @@ en:
   error-signup: 'Please verify your informations.'
   success-account-update: "The account has been successfully updated."
   error-account-update: "We couldn't update the account. Please retry."
+  success-transaction: "Transaction successfully added."
+  error-transaction: "We couldn't add the transaction. Please retry."
+  error-transaction-destroy: "We couldn't delete the transaction."
+  success-transaction-destroy: "Transaction successfully deleted!"
+  success-account-destroy: "Account destroyed."
+  error-account-destroy : "We couldn't delete the account. Please try again."
   username: 'Username'
   password: 'Password'
   firstname: 'Firstname'
@@ -53,10 +63,12 @@ en:
   tooltip-remove: "Withdraw"
   tooltip-edit: "Edit account"
   no-transactions: "There are currently no transactions."
+  add-transaction: "Add a transaction."
   amount: "Amount"
   label: "Label"
   date: "Date"
   nameAccount: "Account name"
+  sure: "Are you sure? This is permanent."
   layouts:
     footer:
       copyright: '© 2016 Arnaud Plumez'
@@ -91,3 +103,12 @@ en:
       title-part-one: "Edit account"
       update: "Update"
       updating: "Updating"
+      delete: "Delete"
+  transactions:
+    new:
+      withdraw: "withdraw"
+      deposit: "deposit"
+      add: "Add transaction"
+      adding: "Adding"
+      cancel: "Cancel"
+      balance: "Balance"

@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
   scope "(:locale)", locale: /en|fr/ do
-    resources :accounts
+    resources :accounts do
+      resources :transactions
+    end
     resources :users
-    resources :transactions
 
     root 'welcome#index'
 

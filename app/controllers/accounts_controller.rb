@@ -17,6 +17,7 @@ class AccountsController < ApplicationController
   def edit
     @account = Account.find(params[:id])
     @nameLabel = I18n.t('.nameAccount')
+    @confirmText = I18n.t('.sure')
   end
 
   def update
@@ -31,32 +32,38 @@ class AccountsController < ApplicationController
     end
   end
 
-  def calculateAccountCurrentBalance(account_id)
-      withdraws = Transaction.all.where(withdraw: true).where(account_id: account_id).sum(:amount)
-      deposits = Transaction.all.where(withdraw: false).where(account_id: account_id).sum(:amount)
-      balance = withdraws - deposits
-      if balance == 0
-        "0"
-      else
-        balance
-      end
+  def destroy
+    @account = Account.find(params[:id])
+    if @account.destroy
+      flash[:success] = I18n.t '.success-account-destroy'
+      redirect_to accounts_path
+    else
+      flash[:error] = I18n.t '.error-account-destroy'
+      render 'edit'
+    end
   end
-  helper_method :calculateAccountCurrentBalance
 
   def printAccountLatestTransactions(account_id)
     html = ""
     transactions = Transaction.all.where(account_id: account_id).order(:created_at)
     transactions.each do |transaction|
       if transaction.withdraw
-        html += '<li class="collection-item green row white-text"><span class="col s1 center">+</span><span class="col s5 truncate">' + transaction.label + '</span><span class="col s3">' + transaction.amount.to_s + 'CHF</span><span class="col s2">' + l(transaction.created_at, format: :date_day_month) + '</span></li>'
+        html += '<li class="collection-item red row white-text"><span class="col s1 center">-</span><span class="col s5 truncate">'+ transaction.label + '</span>'
+        html += '<span class="col s3">' + number_to_currency(transaction.amount).to_s + '</span>'
+        html += '<span class="col s2">' + l(transaction.created_at, format: :date_day_month) + '</span>'
+        html += view_context.link_to '<i class="material-icons white-text">delete</i>'.html_safe, [transaction.account, transaction], method: :delete, data: { confirm: 'Are you sure?' }
+        html += '</li>'
       else
-        html += '<li class="collection-item red row white-text"><span class="col s1 center">-</span><span class="col s5 truncate">' + transaction.label + '</span><span class="col s3">' + transaction.amount.to_s + 'CHF</span><span class="col s2">' + transaction.created_at.strftime("%e %b") + '</span></li>'
+        html += '<li class="collection-item green row white-text"><span class="col s1 center">+</span><span class="col s5 truncate">' + transaction.label + '</span>'
+        html += '<span class="col s3">' + number_to_currency(transaction.amount).to_s + '</span>'
+        html += '<span class="col s2">' + l(transaction.created_at, format: :date_day_month) + '</span>'
+        html += view_context.link_to '<i class="material-icons white-text">delete</i>'.html_safe, [transaction.account, transaction], method: :delete, data: { confirm: 'Are you sure?' }
+        html += '</li>'
       end
     end
     if html == ""
       html = '<li class="collection-item center grey lighten-3">' + I18n.t('.no-transactions') + '</li>'
-      #Add next line when the application is able to add transactions to an account.
-      #html += '<li class="collection-item center grey lighten-3">' + I18n.t('.add-transaction') + '</li>'
+      html += '<li class="collection-item center grey lighten-3"><a href="' + new_account_transaction_path(account_id) + '?isWithdraw=true">' + I18n.t('.add-transaction') + '</a></li>'
     else
       html = '<li class="collection-item grey lighten-2 row"><span class="col s1">+/-</span><span class="col s5 truncate">' + I18n.t('.label') + '</span><span class="col s3">' + I18n.t('.amount') + '</span><span class="col s2">' + I18n.t('.date') + '</span></li>' + html
     end

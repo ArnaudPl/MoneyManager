@@ -9,6 +9,10 @@ fr:
           attributes:
             name:
               taken: "Nom déjà utilisé pour un autre compte."
+        transaction:
+          attributes:
+            withdraw:
+              blank: "Ne peut pas être vide."
   welcome:
     index:
       title: 'Salut et bienvenue !'
@@ -20,6 +24,12 @@ fr:
   error-signup: 'Veuillez vérifier vos informations.'
   success-account-update: "Le compte a été correctement mis à jour."
   error-account-update: "Nous n'avons pas pu mettre le compte à jour, veuillez réessayer."
+  success-transaction: "Transaction correctement ajoutée."
+  error-transaction: "Nous n'avons pas pu créer la transaction, veuillez réessayer."
+  error-transaction-destroy: "Le transaction n'a pas pu être supprimée."
+  success-transaction-destroy: "Transaction correctement supprimée!"
+  success-account-destroy: "Compte supprimé."
+  error-account-destroy : "Le compte n'a pas pu être supprimé. Merci de réessayer."
   username: "Nom d'utilisateur"
   password: 'Mot de passe'
   firstname: 'Prénom'
@@ -32,10 +42,12 @@ fr:
   tooltip-remove: "Débiter"
   tooltip-edit: "Modifier le compte"
   no-transactions: "Il n'y a pas de transactions pour le moment."
+  add-transaction: "Ajouter une transaction."
   amount: "Montant"
   label: "Libellé"
   date: "Date"
   nameAccount: "Nom du compte"
+  sure: "Etes-vous sûr ? Cette action est irréversible."
   layouts:
     footer:
       copyright: '© 2016 Arnaud Plumez'
@@ -70,3 +82,12 @@ fr:
       title-part-one: "Modifier le compte"
       update: "Mettre à jour"
       updating: "Mise à jour"
+      delete: "Supprimer"
+  transactions:
+    new:
+      withdraw: "débiter"
+      deposit: "créditer"
+      add: "Ajouter la transaction"
+      adding: "Ajout"
+      cancel: "Annuler"
+      balance: "Solde"
