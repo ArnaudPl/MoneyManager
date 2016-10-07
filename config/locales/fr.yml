@@ -1,35 +1,53 @@
 fr:
   simple_form:
     labels:
+      user:
+        new:
+          username: "Choisissez un nom d'utilisateur"
+          password: "Choisissez un mot de passe"
+          password_digest: "Choisissez un mot de passe"
+          firstname: "Votre prénom"
+          name: "Votre nom"
       account:
-        name: 'Nom du compte'
+        name: "Choisissez un nom"
+      transaction:
+        new:
+          label: "Libellé"
+          amount: "Montant"
+      defaults:
+    placeholders:
+      user:
+        new:
+          username: "Votre nom d'utilisateur"
+          password: "*****"
+          password_digest: "*****"
+          firstname: "Dites-nous votre prénom"
+          name: "Dites-nous votre nom"
+      account:
+        name: "p.ex. : Banque"
+      transaction:
+        new:
+          label: "Décrivez la transaction"
+          amount: "Le montant de la transaction"
+      defaults:
   time:
     formats:
-      date_day_month: '%e.%m'
+      date_day_month: "%d.%m"
   activerecord:
     errors:
       models:
         account:
           attributes:
             name:
-              taken: "Nom déjà utilisé pour un autre compte."
+              taken: "Nom déjà utilisé pour un de vos comptes."
         transaction:
           attributes:
             withdraw:
-              blank: "  number:
-    currency:
-      format:
-        delimiter: " "
-        format: "%n %u"
-        precision: 2
-        separator: ","
-        significant: false
-        strip_insignificant_zeros: false
-        unit: "€"Ne peut pas être vide."
+              blank: "Ne peut pas être vide."
   number:
     currency:
       format:
-        delimiter: " "
+        delimiter: "'"
         format: "%n %u"
         precision: 2
         separator: ","
@@ -38,60 +56,43 @@ fr:
         unit: "€"
   welcome:
     index:
-      title: 'Salut et bienvenue !'
-  must-login: 'Vous devez être connecté pour acceder à cette partie.'
-  success-login: 'Tu es maintenant connecté !'
-  error-login: 'Veuillez vérifier vos informations.'
-  success-disconnect: 'Vous avez été déconnecté.'
-  success-signup: 'Votre compte a été correctement créé !'
-  error-signup: 'Veuillez vérifier vos informations.'
-  success-account-update: "Le compte a été correctement mis à jour."
-  error-account-update: "Nous n'avons pas pu mettre le compte à jour, veuillez réessayer."
-  success-transaction: "Transaction correctement ajoutée."
-  error-transaction: "Nous n'avons pas pu créer la transaction, veuillez réessayer."
-  error-transaction-destroy: "Le transaction n'a pas pu être supprimée."
-  success-transaction-destroy: "Transaction correctement supprimée!"
-  success-account-destroy: "Compte supprimé."
-  error-account-destroy : "Le compte n'a pas pu être supprimé. Merci de réessayer."
-  username: "Nom d'utilisateur"
-  password: 'Mot de passe'
-  firstname: 'Prénom'
-  name: 'Nom'
-  login: 'Se connecter'
-  logout: 'Se déconnecter'
-  homepage: 'Accueil'
-  accounts-menu: 'Comptes'
-  tooltip-add: "Créditer"
-  tooltip-remove: "Débiter"
-  tooltip-edit: "Modifier le compte"
-  no-transactions: "Il n'y a pas de transactions pour le moment."
-  add-transaction: "Ajouter une transaction."
-  amount: "Montant"
-  label: "Libellé"
-  date: "Date"
-  nameAccount: "Nom du compte"
-  sure: "Etes-vous sûr ? Cette action est irréversible."
+      title: "Salut et bienvenue !"
   layouts:
     footer:
-      copyright: '© 2016 Arnaud Plumez'
-      link-homepage: "Retourner à l'accueil"
+      copyright: "© 2016 Arnaud Plumez"
+      link-homepage: "Retourner à la page d'accueil"
     application:
-      signed_in_as: 'Connecté en tant que'
-      login: 'Se connecter'
+      signed_in_as: "Connecté en tant que"
+      login: "Se connecter"
       signup: "S'inscrire"
-      logout: 'Se déconnecter'
+      logout: "Se déconnecter"
+      menus:
+        homepage: "Accueil"
+        login: "Se connecter"
+        logout: "Se déconnecter"
+        accounts-menu: "Comptes"
+      authorize:
+        must-login: "Vous devez vous connecter avant de continuer."
   sessions:
     new:
       title: "Connectez-vous !"
-      logging-in: 'Connexion'
-      login: 'Se connecter'
+      logging-in: "Connexion"
+      login: "Se connecter"
       username: "Nom d'utilisateur"
-      password: 'Mot de passe'
+      password: "Mot de passe"
+    create:
+      success-login: "Vous êtes connecté !"
+      error-login: "Veuillez vérifier vos informations."
+    destroy:
+      success-disconnect: "Vous êtes deconnecté."
   users:
     new:
-      title: "Rejoins-nous!"
+      title: "Rejoignez-nous !"
       signup: "S'inscrire"
       signing-up: "Inscription"
+    create:
+      success-signup: "Votre compte a été correctement créé."
+      error-signup: "Veuillez vérifier vos informations."
   accounts:
     index:
       title: "Gestion de vos comptes"
@@ -99,13 +100,16 @@ fr:
       show: "Afficher"
       new-account: "Nouveau compte"
       add-account: "Ajouter un compte"
+      tooltip-add: "Créditer"
+      tooltip-remove: "Deposit"
+      tooltip-edit: "Modifier le compte"
     new:
       title: "Ajouter un compte"
       create: "Créer"
       creating: "Création"
     create:
-      success: "Compte créé!"
-      error: "Erreur pendant la création du compte, veuillez réessayer."
+      success: "Compte créé !"
+      error: "Erreur lors de la création du compte, veuillez réessayer."
     show:
       title-part-one: "Compte"
       balance: "Solde"
@@ -115,11 +119,32 @@ fr:
       update: "Mettre à jour"
       updating: "Mise à jour"
       delete: "Supprimer"
+      nameAccount: "Nom du compte"
+      sure: "Cette action est irréversible. Êtes-vous sûr ?"
+    update:
+      success-account-update: "Le compte a été correctement mis à jour."
+      error-account-update: "Nous n'avons pas pu mettre le compte à jour, veuillez réessayer."
+    destroy:
+      success-account-destroy: "Compte supprimé."
+      error-account-destroy : "Nous n'avons pas pu supprimer le compte, veuillez réessayer."
+      transactions:
+        confirmation: "Cette action est irréversible. Êtes-vous sûr ?"
   transactions:
     new:
       withdraw: "débiter"
       deposit: "créditer"
-      add: "Ajouter la transaction"
+      add: "Ajouter une transaction"
       adding: "Ajout"
       cancel: "Annuler"
       balance: "Solde"
+    create:
+      success-transaction: "Transaction correctement ajoutée."
+      error-transaction: "Nous n'avons pas pu ajouter la transaction, veuillez réessayer."
+    destroy:
+      error-transaction-destroy: "Nous n'avons pas pu supprimer la transaction."
+      success-transaction-destroy: "Transaction correctement supprimée."
+    empty: "Il n'y a pas de transactions pour le moment."
+    add: "Ajouter une transaction."
+    amount: "Montant"
+    label: "Libellé"
+    date: "Date"

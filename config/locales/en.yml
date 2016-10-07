@@ -3,8 +3,8 @@ en:
     labels:
       user:
         new:
-          username: 'Choose a username'
-          password: 'Choose a password'
+          username: "Choose a username"
+          password: "Choose a password"
           password_digest: "Choose a password"
           firstname: "Your firstname"
           name: "Your name"
@@ -18,9 +18,9 @@ en:
     placeholders:
       user:
         new:
-          username: 'Your username'
-          password: '*****'
-          password_digest: '*****'
+          username: "Your username"
+          password: "*****"
+          password_digest: "*****"
           firstname: "Tell us your firstname"
           name: "Tell us your name"
       account:
@@ -32,7 +32,7 @@ en:
       defaults:
   time:
     formats:
-      date_day_month: '%d-%m'
+      date_day_month: "%d-%m"
   activerecord:
     errors:
       models:
@@ -47,7 +47,7 @@ en:
   number:
     currency:
       format:
-        delimiter: "'"
+        delimiter: ","
         format: "%u%n"
         precision: 2
         separator: "."
@@ -56,43 +56,43 @@ en:
         unit: "$"
   welcome:
     index:
-      title: 'Hi and welcome!'
+      title: "Hi and welcome!"
   layouts:
     footer:
-      copyright: '© 2016 Arnaud Plumez'
-      link-homepage: 'Back to the homepage'
+      copyright: "© 2016 Arnaud Plumez"
+      link-homepage: "Back to the homepage"
     application:
-      signed_in_as: 'Signed in as'
-      login: 'Login'
-      signup: 'Signup'
-      logout: 'Logout'
+      signed_in_as: "Signed in as"
+      login: "Login"
+      signup: "Signup"
+      logout: "Logout"
       menus:
-        homepage: 'Home'
-        login: 'Login'
-        logout: 'Logout'
-        accounts-menu: 'Accounts'
+        homepage: "Home"
+        login: "Login"
+        logout: "Logout"
+        accounts-menu: "Accounts"
       authorize:
-        must-login: 'You must log in before continuing.'
+        must-login: "You must log in before continuing."
   sessions:
     new:
       title: "Let's get logged in!"
-      logging-in: 'Logging in'
-      login: 'Login'
-      username: 'Username test'
-      password: 'Password test'
+      logging-in: "Logging in"
+      login: "Login"
+      username: "Username"
+      password: "Password"
     create:
-      success-login: 'You have been successfully connected!'
-      error-login: 'Please verify your informations.'
+      success-login: "You have been successfully connected!"
+      error-login: "Please verify your informations."
     destroy:
-      success-disconnect: 'You have been disconnected.'
+      success-disconnect: "You have been disconnected."
   users:
     new:
       title: "Rejoin us!"
       signup: "Sign up"
       signing-up: "Signing up"
     create:
-      success-signup: 'You have successfully created your account!'
-      error-signup: 'Please verify your informations.'
+      success-signup: "You have successfully created your account!"
+      error-signup: "Please verify your informations."
   accounts:
     index:
       title: "Manage your accounts"
@@ -123,7 +123,7 @@ en:
       sure: "Are you sure? This is permanent."
     update:
       success-account-update: "The account has been successfully updated."
-      error-account-update: "We couldn't update the account('transactions.add')t. Please retry."
+      error-account-update: "We couldn't update the account. Please retry."
     destroy:
       success-account-destroy: "Account destroyed."
       error-account-destroy : "We couldn't delete the account. Please try again."
