@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  scope "(:locale)", locale: /en|fr|CH-fr/ do
+  scope "(:locale)", locale: /en|fr|CH-fr|th/ do
     resources :accounts do
       resources :transactions
     end

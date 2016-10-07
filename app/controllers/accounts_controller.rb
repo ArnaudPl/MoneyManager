@@ -61,7 +61,7 @@ class AccountsController < ApplicationController
 
   def printAccountLatestTransactions(account_id)
     html = ""
-    transactions = Transaction.all.where(account_id: account_id).where(user_id: current_user.id).order(:created_at).limit(10)
+    transactions = Transaction.all.where(account_id: account_id).where(user_id: current_user.id).order(created_at: :DESC).limit(10)
     transactions.each do |transaction|
       if transaction.withdraw
         html += '<li class="collection-item red row white-text"><span class="col s1 center">-</span><span class="col s5 truncate">'+ transaction.label + '</span>'

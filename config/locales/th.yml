@@ -1,0 +1,150 @@
+th:
+  simple_form:
+    labels:
+      user:
+        new:
+          username: "เลือกชื่อผู้ใช้"
+          password: "ตั้งรหัสผ่าน"
+          password_digest: "ตั้งรหัสผ่าน"
+          firstname: "ชื่อจริงของคุณ"
+          name: "ชื่อของคุณ"
+      account:
+        name: "เลือกชื่อ"
+      transaction:
+        new:
+          label: "ฉลาก"
+          amount: "จำนวน"
+      defaults:
+    placeholders:
+      user:
+        new:
+          username: "ชื่อผู้ใช้ของคุณ"
+          password: "*****"
+          password_digest: "*****"
+          firstname: "บอกชื่อแรกของคุณ"
+          name: "บอกให้เราทราบชื่อของคุณ"
+      account:
+        name: "ตัวอย่างเช่น: ธนาคาร"
+      transaction:
+        new:
+          label: "อธิบายการทำธุรกรรม"
+          amount: "จำนวนของการทำธุรกรรม"
+      defaults:
+  time:
+    formats:
+      date_day_month: "%d-%m"
+  activerecord:
+    errors:
+      models:
+        account:
+          attributes:
+            name:
+              taken: "ชื่อดำเนินการแล้วโดยบัญชีอื่น"
+        transaction:
+          attributes:
+            withdraw:
+              blank: "มันไม่สามารถจะว่างเปล่า"
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u%n"
+        precision: 2
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "฿"
+  welcome:
+    index:
+      title: "สวัสดีและยินดีต้อนรับ"
+  layouts:
+    footer:
+      copyright: "© 2016 Arnaud Plumez"
+      link-homepage: "กลับไปหน้าแรก"
+    application:
+      signed_in_as: "ลงชื่อเข้าใช้"
+      login: "เข้าสู่ระบบ"
+      signup: "ลงชื่อ"
+      logout: "ออกจากระบบ"
+      menus:
+        homepage: "บ้าน"
+        login: "เข้าสู่ระบบ"
+        logout: "ออกจากระบบ"
+        accounts-menu: "บัญชี"
+      authorize:
+        must-login: "คุณต้องเข้าสู่ระบบก่อนดำเนินการต่อ"
+  sessions:
+    new:
+      title: "ขอเริ่มเข้าสู่ระบบ"
+      logging-in: "เข้าสู่ระบบ"
+      login: "เข้าสู่ระบบ"
+      username: "ชื่อผู้ใช้"
+      password: "รหัสผ่าน"
+    create:
+      success-login: "คุณได้รับการเชื่อมต่อสำเร็จ"
+      error-login: "โปรดตรวจสอบข้อมูลของคุณ"
+    destroy:
+      success-disconnect: "คุณได้รับการตัดการเชื่อมต่อ"
+  users:
+    new:
+      title: "สมทบกับเรา"
+      signup: "ลงชื่อ"
+      signing-up: "การสมัครใช้งาน"
+    create:
+      success-signup: "คุณได้สร้างบัญชีของคุณประสบความสำเร็จ"
+      error-signup: "โปรดตรวจสอบข้อมูลของคุณ"
+  accounts:
+    index:
+      title: "จัดการบัญชีของคุณ"
+      balance: "สมดุล"
+      show: "แสดง"
+      new-account: "บัญชีใหม่"
+      add-account: "เพิ่มบัญชี"
+      tooltip-add: "เงินฝาก"
+      tooltip-remove: "ถอน"
+      tooltip-edit: "แก้ไขบัญชี"
+    new:
+      title: "เพิ่มบัญชี"
+      create: "สร้าง"
+      creating: "การสร้าง"
+    create:
+      success: "บัญชีที่สร้าง"
+      error: "ข้อผิดพลาดขณะสร้างบัญชีโปรดลองอีกครั้ง"
+    show:
+      title-part-one: "บัญชี"
+      balance: "สมดุล"
+      latest-transactions: "การทำธุรกรรมต่างๆ"
+    edit:
+      title-part-one: "แก้ไขบัญชี"
+      update: "ปรับปรุง"
+      updating: "อัปเดต"
+      delete: "ลบ"
+      nameAccount: "ชื่อบัญชี"
+      sure: "คุณแน่ใจไหม? นี้เป็นแบบถาวร"
+    update:
+      success-account-update: "บัญชีที่ได้รับการปรับปรุงเรียบร้อยแล้ว"
+      error-account-update: "เราไม่สามารถอัปเดตบัญชี โปรดลองอีกครั้ง"
+    destroy:
+      success-account-destroy: "บัญชีทำลาย"
+      error-account-destroy : "เราไม่สามารถลบบัญชี กรุณาลองอีกครั้ง"
+      transactions:
+        confirmation: "คุณแน่ใจไหม ? นี้เป็นแบบถาวร"
+  transactions:
+    new:
+      withdraw: "ถอน"
+      deposit: "เงินฝาก"
+      add: "เพิ่มการทำธุรกรรม"
+      adding: "เพิ่ม"
+      cancel: "ยกเลิก"
+      balance: "สมดุล"
+    create:
+      success-transaction: "การทำธุรกรรมเพิ่มเรียบร้อยแล้ว"
+      error-transaction: "เราไม่สามารถเพิ่มการทำธุรกรรม โปรดลองอีกครั้ง"
+    destroy:
+      error-transaction-destroy: "เราไม่สามารถลบการทำธุรกรรม"
+      success-transaction-destroy: "การทำธุรกรรมลบเรียบร้อยแล้ว"
+    empty: "ขณะนี้มีการทำธุรกรรมไม่มี"
+    add: "เพิ่มการทำธุรกรรม"
+    amount: "จำนวน"
+    label: "ฉลาก"
+    date: "วันที่"
