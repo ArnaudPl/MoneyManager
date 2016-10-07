@@ -3,10 +3,10 @@
 <%= simple_form_for @user do |f| %>
 
   <div class="row">
-    <%= f.input :firstname, :autofocus => true, label: @firstnameLabel, wrapper_html: {class: 's12 m4 offset-m2'} %>
-    <%= f.input :name, label: @nameLabel, wrapper_html: {class: 's12 m4'} %>
-    <%= f.input :username, label: @usernameLabel, wrapper_html: {class: 's12 m6 offset-m3'} %>
-    <%= f.input :password_digest, label: @passwordLabel, wrapper_html: {class: 's12 m6 offset-m3'} %>
+    <%= f.input :firstname, :autofocus => true, wrapper_html: {class: 's12 m4 offset-m2'} %>
+    <%= f.input :name, wrapper_html: {class: 's12 m4'} %>
+    <%= f.input :username, wrapper_html: {class: 's12 m6 offset-m3'} %>
+    <%= f.input :password_digest, wrapper_html: {class: 's12 m6 offset-m3'} %>
   </div>
 
   <div class="row center">

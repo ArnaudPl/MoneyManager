@@ -12,12 +12,6 @@
     <h4 class="center"><em><%= t('.balance') %>: <%= @balance %></em></h4>
   </div>
 
-  <% if params[:isWithdraw] != "true"
-        max_amount = 999999
-     else
-        max_amount = @balance
-     end %> <!-- Change the max value of the amount input. -->
-
   <div class="row hide">
     <%= f.input :account_id, :as => :hidden, :input_html => { :value => @account.id } %>
     <%= f.input :user_id, :as => :hidden, :input_html => { :value => current_user.id } %>
@@ -25,8 +19,8 @@
   </div>
 
   <div class="row">
-    <%= f.input :label, label: @Label, :autofocus => true, wrapper_html: {class: 's12 m6 offset-m3'} %>
-    <%= f.input :amount, label: @AmountLabel, input_html: { min: '0', max: max_amount.to_s }, wrapper_html: {class: 's12 m4 offset-m4'} %>
+    <%= f.input :label, :autofocus => true, wrapper_html: {class: 's12 m6 offset-m3'} %>
+    <%= f.input :amount, wrapper_html: {class: 's12 m4 offset-m4'} %>
   </div>
 
   <div class="row center">

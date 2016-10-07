@@ -13,10 +13,10 @@ class ApplicationController < ActionController::Base
   end
 
   def menus
-    homepage = I18n.t('.homepage')
-    logout = I18n.t('.logout')
-    accounts = I18n.t('.accounts-menu')
-    login = I18n.t('.login')
+    homepage = t('layouts.application.menus.homepage')
+    logout = t('layouts.application.menus.logout')
+    accounts = t('layouts.application.menus.accounts-menu')
+    login = t('layouts.application.menus.login')
     @menus = '<li><a href="' + root_path + '">' + homepage + '</a></li>'
     if current_user
       @menus += '<li><a href="' + accounts_path + '">' + accounts + '</a></li>'
@@ -46,7 +46,7 @@ class ApplicationController < ActionController::Base
 
   def authorize
     if !current_user
-      flash[:error] = I18n.t('must-login')
+      flash[:error] = t('layouts.application.authorize.must-login')
       redirect_to login_path
     end
   end

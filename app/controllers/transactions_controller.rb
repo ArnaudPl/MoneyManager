@@ -5,18 +5,16 @@ class TransactionsController < ApplicationController
     @transaction = Transaction.new
     @account = Account.find(params[:account_id])
     @balance = calculateAccountCurrentBalance(@account.id)
-    @Label = I18n.t('.label')
-    @AmountLabel = I18n.t('amount')
   end
 
   def create
     @account = Account.find(params[:account_id])
     @transactionSave = @account.transactions.new(transaction_params)
     if @transactionSave.save
-      flash[:success] = I18n.t '.success-transaction'
+      flash[:success] = t('.success-transaction')
       redirect_to account_path(@account)
     else
-      flash[:error] = I18n.t '.error-transaction'
+      flash[:error] = t('.error-transaction')
       render 'new'
     end
   end
@@ -25,10 +23,10 @@ class TransactionsController < ApplicationController
     @account = Account.find(params[:account_id])
     @transaction = @account.transactions.find(params[:id])
     if @transaction.destroy
-      flash[:success] = I18n.t '.success-transaction-destroy'
+      flash[:success] = t('.success-transaction-destroy')
       redirect_to request.referer
     else
-      flash[:error] = I18n.t '.error-transaction-destroy'
+      flash[:error] = t('.error-transaction-destroy')
       redirect_to request.referer
     end
   end

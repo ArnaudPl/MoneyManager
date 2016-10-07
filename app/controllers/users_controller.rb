@@ -1,10 +1,6 @@
 class UsersController < ApplicationController
   def new
     @user = User.new
-    @firstnameLabel = I18n.t '.firstname'
-    @nameLabel = I18n.t '.name'
-    @usernameLabel = I18n.t '.username'
-    @passwordLabel = I18n.t '.password'
   end
 
   def create
@@ -14,10 +10,10 @@ class UsersController < ApplicationController
     user.inscription_date = Time.zone.now
     if user.save
       session[:user_id] = user.id
-      flash[:success] = I18n.t '.success-signup'
+      flash[:success] = t('.success-signup')
       redirect_to root_path
     else
-      flash[:error] = I18n.t '.error-signup'
+      flash[:error] = t('.error-signup')
       redirect_to signup_path
     end
   end

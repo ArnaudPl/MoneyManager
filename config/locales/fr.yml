@@ -16,7 +16,16 @@ fr:
         transaction:
           attributes:
             withdraw:
-              blank: "Ne peut pas être vide."
+              blank: "  number:
+    currency:
+      format:
+        delimiter: " "
+        format: "%n %u"
+        precision: 2
+        separator: ","
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "€"Ne peut pas être vide."
   number:
     currency:
       format:

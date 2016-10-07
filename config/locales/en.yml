@@ -1,29 +1,35 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
   simple_form:
     labels:
+      user:
+        new:
+          username: 'Choose a username'
+          password: 'Choose a password'
+          password_digest: "Choose a password"
+          firstname: "Your firstname"
+          name: "Your name"
       account:
-        name: 'Name of the account'
+        name: "Choose a name"
+      transaction:
+        new:
+          label: "Label"
+          amount: "Amount"
+      defaults:
+    placeholders:
+      user:
+        new:
+          username: 'Your username'
+          password: '*****'
+          password_digest: '*****'
+          firstname: "Tell us your firstname"
+          name: "Tell us your name"
+      account:
+        name: "i.e.: Bank"
+      transaction:
+        new:
+          label: "Describe the transaction"
+          amount: "The amount of the transaction"
+      defaults:
   time:
     formats:
       date_day_month: '%d-%m'
@@ -51,38 +57,6 @@ en:
   welcome:
     index:
       title: 'Hi and welcome!'
-  must-login: 'You must log in before continuing.'
-  success-login: 'You have been successfully connected!'
-  error-login: 'Please verify your informations.'
-  success-disconnect: 'You have been disconnected.'
-  success-signup: 'You have successfully created your account!'
-  error-signup: 'Please verify your informations.'
-  success-account-update: "The account has been successfully updated."
-  error-account-update: "We couldn't update the account. Please retry."
-  success-transaction: "Transaction successfully added."
-  error-transaction: "We couldn't add the transaction. Please retry."
-  error-transaction-destroy: "We couldn't delete the transaction."
-  success-transaction-destroy: "Transaction successfully deleted!"
-  success-account-destroy: "Account destroyed."
-  error-account-destroy : "We couldn't delete the account. Please try again."
-  username: 'Username'
-  password: 'Password'
-  firstname: 'Firstname'
-  name: 'Name'
-  login: 'Login'
-  logout: 'Logout'
-  homepage: 'Home'
-  accounts-menu: 'Accounts'
-  tooltip-add: "Deposit"
-  tooltip-remove: "Withdraw"
-  tooltip-edit: "Edit account"
-  no-transactions: "There are currently no transactions."
-  add-transaction: "Add a transaction."
-  amount: "Amount"
-  label: "Label"
-  date: "Date"
-  nameAccount: "Account name"
-  sure: "Are you sure? This is permanent."
   layouts:
     footer:
       copyright: '© 2016 Arnaud Plumez'
@@ -92,18 +66,33 @@ en:
       login: 'Login'
       signup: 'Signup'
       logout: 'Logout'
+      menus:
+        homepage: 'Home'
+        login: 'Login'
+        logout: 'Logout'
+        accounts-menu: 'Accounts'
+      authorize:
+        must-login: 'You must log in before continuing.'
   sessions:
     new:
       title: "Let's get logged in!"
       logging-in: 'Logging in'
       login: 'Login'
-      username: 'Username'
-      password: 'Password'
+      username: 'Username test'
+      password: 'Password test'
+    create:
+      success-login: 'You have been successfully connected!'
+      error-login: 'Please verify your informations.'
+    destroy:
+      success-disconnect: 'You have been disconnected.'
   users:
     new:
       title: "Rejoin us!"
       signup: "Sign up"
       signing-up: "Signing up"
+    create:
+      success-signup: 'You have successfully created your account!'
+      error-signup: 'Please verify your informations.'
   accounts:
     index:
       title: "Manage your accounts"
@@ -111,6 +100,9 @@ en:
       show: "Show"
       new-account: "New account"
       add-account: "Add an account"
+      tooltip-add: "Deposit"
+      tooltip-remove: "Withdraw"
+      tooltip-edit: "Edit account"
     new:
       title: "Add an account"
       create: "Create"
@@ -127,6 +119,16 @@ en:
       update: "Update"
       updating: "Updating"
       delete: "Delete"
+      nameAccount: "Account name"
+      sure: "Are you sure? This is permanent."
+    update:
+      success-account-update: "The account has been successfully updated."
+      error-account-update: "We couldn't update the account('transactions.add')t. Please retry."
+    destroy:
+      success-account-destroy: "Account destroyed."
+      error-account-destroy : "We couldn't delete the account. Please try again."
+      transactions:
+        confirmation: "Are you sure ? This is permanent."
   transactions:
     new:
       withdraw: "withdraw"
@@ -135,3 +137,14 @@ en:
       adding: "Adding"
       cancel: "Cancel"
       balance: "Balance"
+    create:
+      success-transaction: "Transaction successfully added."
+      error-transaction: "We couldn't add the transaction. Please retry."
+    destroy:
+      error-transaction-destroy: "We couldn't delete the transaction."
+      success-transaction-destroy: "Transaction successfully deleted!"
+    empty: "There are currently no transactions."
+    add: "Add a transaction."
+    amount: "Amount"
+    label: "Label"
+    date: "Date"
