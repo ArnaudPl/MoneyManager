@@ -6,19 +6,6 @@
 <% end %>
 </h2>
 
-<% if @transactionSave && @transactionSave.errors.any? %>
-    <div id="error_explanation">
-
-      <h2><%= pluralize(@transactionSave.errors.count, "error") %> prohibited this msg from being saved:</h2>
-
-      <ul>
-        <% @transactionSave.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-<% end %>
-
 <%= simple_form_for([@account, @account.transactions.build]) do |f| %>
 
   <div class="row">

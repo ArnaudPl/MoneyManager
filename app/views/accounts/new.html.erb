@@ -1,0 +1,13 @@
+<h2><%= t('.title') %></h2>
+
+<%= simple_form_for @account do |f| %>
+
+  <div class="row">
+    <%= f.input :name, :autofocus => true, wrapper_html: {class: 's12 m6 offset-m3'} %>
+  </div>
+
+  <div class="row center">
+    <%= f.button :submit, value: t('.create'), data: { disable_with: t('.creating')+"..." } %>
+  </div>
+
+<% end %>

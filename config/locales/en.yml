@@ -20,6 +20,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  simple_form:
+    labels:
+      account:
+        name: 'Name of the account'
   time:
     formats:
       date_day_month: '%d-%m'
@@ -34,6 +38,16 @@ en:
           attributes:
             withdraw:
               blank: "Cannot be blank."
+  number:
+    currency:
+      format:
+        delimiter: "'"
+        format: "%u%n"
+        precision: 2
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "$"
   welcome:
     index:
       title: 'Hi and welcome!'
@@ -95,6 +109,15 @@ en:
       title: "Manage your accounts"
       balance: "Balance"
       show: "Show"
+      new-account: "New account"
+      add-account: "Add an account"
+    new:
+      title: "Add an account"
+      create: "Create"
+      creating: "Creating"
+    create:
+      success: "Account created!"
+      error: "Error while creating the account, please retry."
     show:
       title-part-one: "Account"
       balance: "Balance"

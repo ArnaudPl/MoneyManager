@@ -1,4 +1,4 @@
-fr:
+CH-fr:
   simple_form:
     labels:
       account:
@@ -21,12 +21,12 @@ fr:
     currency:
       format:
         delimiter: " "
-        format: "%n %u"
+        format: "%u %n"
         precision: 2
         separator: ","
         significant: false
         strip_insignificant_zeros: false
-        unit: "€"
+        unit: "CHF"
   welcome:
     index:
       title: 'Salut et bienvenue !'

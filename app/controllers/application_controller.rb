@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  include ActionView::Helpers::NumberHelper
+  include ActionView::Helpers::NumberHelper #For number_to_currency
   protect_from_forgery with: :exception
 
   before_action :set_locale
@@ -33,8 +33,8 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def calculateAccountCurrentBalance(account_id)
-      withdraws = Transaction.all.where(withdraw: true).where(account_id: account_id).sum(:amount)
-      deposits = Transaction.all.where(withdraw: false).where(account_id: account_id).sum(:amount)
+      withdraws = Transaction.all.where(withdraw: true).where(account_id: account_id).where(user_id: current_user.id).sum(:amount)
+      deposits = Transaction.all.where(withdraw: false).where(account_id: account_id).where(user_id: current_user.id).sum(:amount)
       balance = deposits - withdraws
       if balance == 0
         number_to_currency(0)
